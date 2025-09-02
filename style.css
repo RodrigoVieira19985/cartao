@@ -1,0 +1,156 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-shadow: none;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #242333;
+}
+
+main{
+    height: 700px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+form{
+    width: 350px;
+    height: 300px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: white;
+}
+
+section{
+    width: max-content;
+    height: 60%;
+    background-color: white;
+    display: flex;
+    align-items: end;
+}
+
+input, select{
+    margin-top: 5px;
+    height: 40px;
+    font-size: 24px;
+    padding-left: 10px;
+    border-radius: 5px;
+}
+
+select{
+    width: 45%;
+}
+
+#data{
+    width: 80%;
+}
+
+.displaycolumn{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+p{
+    width: 80%;
+    height: 30px;
+    color: aliceblue;
+    font-size: 18PX;
+}
+
+.display{
+    display: flex;
+    justify-content: space-between;
+}
+
+#validade input{
+    width: 70px;
+    text-align: center;
+}
+
+.flip{
+    transform: rotateY(180deg);
+}
+
+#card{
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    display: flex;
+    justify-content: center;
+}
+
+#cf{
+    transform: rotateY(180deg);
+}
+
+#cf, #ct{
+    backface-visibility: hidden;
+}
+
+.face{
+    width: 300px;
+    height: 160px;
+    padding: 15px;
+    position: absolute;
+}
+.cartao{
+    width: 300px;
+    height: 160px;
+    padding: 15px;
+    top: -90px;
+    background-color: black;
+    border-radius: 10px;
+    justify-content: space-evenly;
+}
+
+#validade{
+    width: max-content;
+}
+
+img{
+    height: 40px;
+    width: 60px;
+}
+
+#botao{
+    background-color: #4B61C9;
+}
+
+#faixa1{
+    background-color: white;
+    width: 330px;
+    height: 20px;
+}
+
+#faixa2{
+    background-color: white;
+    width: 70px;
+    height: 20px;
+    text-align: center;
+    
+}
+
+#ct{
+    width: 330px;
+    height: 190px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+#f1{
+    margin-left: 15px;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}

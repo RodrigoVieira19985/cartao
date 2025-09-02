@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartão Animação</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="cartao displaycolumn" id="cf">
+                    <div class="display">
+                        <img src="emv.png" alt="">
+                        <img src="master.png" alt="">
+                    </div>
+                    <p id="numeroCartao" class="displaycolumn">6664 **** 7854 ****</p>
+                    <div class="display">
+                        <p id="nomeCartao" class="displaycolumn">Rodrigo A v</p>
+                        <div class="display" id="validade">
+                            <p id="mesCartao" class="displaycolumn">MM</p>
+                            <p class="displaycolumn">/</p>
+                            <p id="anoCartao" class="displaycolumn">YY</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="cartao displaycolumn" id="ct">
+                    <div id="faixa1"></div>
+                    <p class="displaycolumn">CVV</p>
+                    <div id="faixa2"></div>
+                    <img src="master.png" alt="">
+                </div>
+            </div>
+        </div>
+        <section>
+            <form action="">
+                <div class="displaycolumn">
+                    <label for="numero">Numero do cartão:</label>
+                    <input type="text" name="num" id="numero">
+                </div>
+                <div class="displaycolumn">
+                    <label for="nome">Nome no cartão:</label>
+                    <input type="text" name="n" id="nome">
+                </div>
+                <div class="display">
+                    <div class="displaycolumn" id="data">
+                        <label for="">Data de validade:</label>
+                        <div>
+                            <select id="mes">
+                                <option value="">Mês</option>
+                                <option value="1">01</option>
+                                <option value="2">02</option>
+                                <option value="3">03</option>
+                            </select>
+                            <select id="ano">
+                                <option value="">Ano</option>
+                                <option value="2025">2025</option>
+                                <option value="2026">2026</option>
+                                <option value="2027">2027</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="displaycolumn" id="validade">
+                        <label for="CVV">CVV</label>
+                        <input type="text" name="CVV" id="CVV">
+                    </div>
+                </div>
+                <input type="submit" value="Enviar" id="botao">
+            </form>
+        </section>
+    </main>
+</body>
+<script>
+    document.addEventListener("input", function(e){
+        var numeroCartao = document.getElementById("numeroCartao")
+        var nomeCartao = document.getElementById("nomeCartao")
+        var mesCartao = document.getElementById("mesCartao")
+        var anoCartao = document.getElementById("anoCartao")
+
+        var numero = document.getElementById("numero")
+        var nome = document.getElementById("nome")
+        var mes = document.getElementById("mes")
+        var ano = document.getElementById("ano")
+        
+        numeroCartao.innerHTML = numero.value
+        nomeCartao.innerHTML = nome.value
+        mesCartao.innerHTML = mes.value
+        anoCartao.innerHTML = ano.value
+    })
+
+    var card = document.querySelector('.flip-card');
+    validade = document.getElementById("validade")
+    document.addEventListener('click', function() {
+        card.classList.toggle('flip');
+    });
+</script>
+</html>

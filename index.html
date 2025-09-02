@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartão Animação</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <div class="flip" id="card">
+            <div class="cartao displaycolumn face" id="ct">
+                <div id="faixa1"></div>
+                <div id="f1">
+                    <p class="displaycolumn">CVV</p>
+                    <div id="faixa2"></div>
+                    <img src="master.png" alt="">
+                </div>
+            </div>
+            <div class="cartao displaycolumn face" id="cf">
+                <div class="display">
+                    <img src="emv.png" alt="">
+                    <img src="master.png" alt="">
+                </div>
+                <p id="numeroCartao" class="displaycolumn"></p>
+                <div class="display">
+                    <p id="nomeCartao" class="displaycolumn"></p>
+                    <div class="display" id="validade">
+                        <p id="mesCartao" class="displaycolumn">MM</p>
+                        <p class="displaycolumn">/</p>
+                        <p id="anoCartao" class="displaycolumn">YY</p>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <section>
+            <form action="">
+                <div class="displaycolumn">
+                    <label for="numero">Numero do cartão:</label>
+                    <input type="text" name="num" id="numero" maxlength="16" onclick="frente()">
+                </div>
+                <div class="displaycolumn">
+                    <label for="nome">Nome no cartão:</label>
+                    <input type="text" name="n" id="nome" maxlength="27" onclick="frente()">
+                </div>
+                <div class="display">
+                    <div class="displaycolumn" id="data">
+                        <label for="">Data de validade:</label>
+                        <div>
+                            <select id="mes" onclick="frente()">
+                                <option value="MM">Mês</option>
+                                <option value="01">01</option>
+                                <option value="02">02</option>
+                                <option value="03">03</option>
+                                <option value="04">04</option>
+                                <option value="05">05</option>
+                                <option value="06">06</option>
+                                <option value="07">07</option>
+                                <option value="08">08</option>
+                                <option value="09">09</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                            </select>
+                            <select id="ano" onclick="frente()">
+                                <option value="YY">Ano</option>
+                                <option value="25">25</option>
+                                <option value="26">26</option>
+                                <option value="27">27</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="displaycolumn" id="validade">
+                        <label for="CVV">CVV</label>
+                        <input type="text" name="CVV" id="CVV" maxlength="3" onclick="trocar()">
+                    </div>
+                </div>
+                <input type="submit" value="Enviar" id="botao">
+            </form>
+        </section>
+    </main>
+</body>
+<script>
+    var card = document.querySelector('#card')
+    var posi = 1
+    document.addEventListener("input", function(e){
+        var numeroCartao = document.getElementById("numeroCartao")
+        var nomeCartao = document.getElementById("nomeCartao")
+        var mesCartao = document.getElementById("mesCartao")
+        var anoCartao = document.getElementById("anoCartao")
+        var cvvCartao = document.getElementById("faixa2")
+
+        var numero = document.getElementById("numero")
+        var nome = document.getElementById("nome")
+        var mes = document.getElementById("mes")
+        var ano = document.getElementById("ano")
+        var cvv = document.getElementById("CVV")
+        
+        numeroCartao.innerHTML = numero.value
+        nomeCartao.innerHTML = nome.value
+        mesCartao.innerHTML = mes.value
+        anoCartao.innerHTML = ano.value
+        cvvCartao.innerHTML = cvv.value
+    })
+
+    function frente(){
+        if(posi == 2){
+            card.classList.toggle('flip')
+            posi = 1
+        }
+    }
+
+    function trocar(){
+        if(posi==1){
+            card.classList.toggle('flip')
+            posi=2
+        }  
+    }
+
+</script>
+</html>
