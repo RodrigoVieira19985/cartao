@@ -37,18 +37,18 @@
         <section>
             <form action="">
                 <div class="displaycolumn">
-                    <label for="numero">Numero do cart:</label>
-                    <input type="text" name="num" id="numero" maxlength="16" onclick="frente()">
+                    <label for="numero">Numero do cartão:</label>
+                    <input type="text" name="num" id="numero" maxlength="16" onclick="frente()" autocomplete="off">
                 </div>
                 <div class="displaycolumn">
-                    <label for="nome">Nome no cart:</label>
-                    <input type="text" name="n" id="nome" maxlength="27" onclick="frente()">
+                    <label for="nome">Nome no cartão:</label>
+                    <input type="text" name="n" id="nome" maxlength="27" onclick="frente()" autocomplete="off">
                 </div>
                 <div class="display">
                     <div class="displaycolumn" id="data">
                         <label for="">Data de validade:</label>
                         <div>
-                            <select id="mes" onclick="frente()">
+                            <select id="mes" onclick="frente()" autocomplete="off">
                                 <option value="MM">Mês</option>
                                 <option value="01">01</option>
                                 <option value="02">02</option>
@@ -63,7 +63,7 @@
                                 <option value="11">11</option>
                                 <option value="12">12</option>
                             </select>
-                            <select id="ano" onclick="frente()">
+                            <select id="ano" onclick="frente()" autocomplete="off">
                                 <option value="YY">Ano</option>
                                 <option value="25">25</option>
                                 <option value="26">26</option>
@@ -73,7 +73,7 @@
                     </div>
                     <div class="displaycolumn" id="validade">
                         <label for="CVV">CVV</label>
-                        <input type="text" name="CVV" id="CVV" maxlength="3" onclick="trocar()">
+                        <input type="text" name="CVV" id="CVV" maxlength="3" onclick="trocar()" autocomplete="off">
                     </div>
                 </div>
                 <input type="submit" value="Enviar" id="botao">
